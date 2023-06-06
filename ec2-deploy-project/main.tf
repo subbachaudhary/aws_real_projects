@@ -17,14 +17,14 @@ module "security_group" {
   ]
 }
 module "ec2" {
-  source = "./modules/ec2"
-  env = var.env
-  project_name = var.project_name
-  vpc_cidr = module.vpc.vpc_id
+  source        = "./modules/ec2"
+  env           = var.env
+  project_name  = var.project_name
+  vpc_cidr      = module.vpc.vpc_id
   public_subnet = module.vpc.public_subnet_list
-  ec2_sg = module.security_group.ec2_sg
-  depends_on = [ 
+  ec2_sg        = module.security_group.ec2_sg
+  depends_on = [
     module.vpc,
     module.security_group
-   ]
+  ]
 }

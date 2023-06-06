@@ -23,3 +23,9 @@ variable "key_name" {
     default = "terraform_ec2_key"
   
 }
+variable "public_key" {
+    description = "defining public_key variables"
+    type = string
+    default = "id_rsa.pub"
+  
+}
